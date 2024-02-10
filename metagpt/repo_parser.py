@@ -233,7 +233,7 @@ class RepoParser(BaseModel):
         if not path.exists():
             return
         command = f"pyreverse {str(path)} -o dot"
-        result = subprocess.run(command, shell=True, check=True, cwd=str(path))
+        result = subprocess.run(command, shell=False, check=True, cwd=str(path))
         if result.returncode != 0:
             raise ValueError(f"{result}")
         class_view_pathname = path / "classes.dot"
