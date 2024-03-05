@@ -195,7 +195,7 @@ class StanfordTownExtEnv(ExtEnv):
                     if add in address_tiles:
                         address_tiles[add].add((j, i))
                     else:
-                        address_tiles[add] = set([(j, i)])
+                        address_tiles[add] = {(j, i)}
         values["address_tiles"] = address_tiles
         return values
 
