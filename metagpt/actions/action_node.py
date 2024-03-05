@@ -362,7 +362,7 @@ class ActionNode:
         format_func = lambda i: i.example
         return self._compile_f(schema, mode, tag, format_func, kv_sep="\n", exclude=exclude)
 
-    def compile(self, context, schema="json", mode="children", template=SIMPLE_TEMPLATE, exclude=[]) -> str:
+    def compile(self, context, schema="json", mode="children", template=SIMPLE_TEMPLATE, exclude=None) -> str:
         """
         mode: all/root/children
             mode="children": 编译所有子节点为一个统一模板，包括instruction与example
@@ -373,6 +373,7 @@ class ActionNode:
             schema="json"：编译context, example(json), instruction(markdown), constraint, action
             schema="markdown": 编译context, example(markdown), instruction(markdown), constraint, action
         """
+        exclude = [] if exclude is None else exclude
         if schema == "raw":
             return context + "\n\n## Actions\n" + LANGUAGE_CONSTRAINT + "\n" + self.instruction
 
@@ -474,7 +475,7 @@ class ActionNode:
         strgy="simple",
         images: Optional[Union[str, list[str]]] = None,
         timeout=3,
-        exclude=[],
+        exclude=None,
     ):
         """Fill the node(s) with mode.
 
@@ -496,6 +497,7 @@ class ActionNode:
         :param exclude: The keys of ActionNode to exclude.
         :return: self
         """
+        exclude = [] if exclude is None else exclude
         self.set_llm(llm)
         self.set_context(context)
         if self.schema:

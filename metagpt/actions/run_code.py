@@ -90,7 +90,9 @@ class RunCode(Action):
             return "", str(e)
         return namespace.get("result", ""), ""
 
-    async def run_script(self, working_directory, additional_python_paths=[], command=[]) -> Tuple[str, str]:
+    async def run_script(self, working_directory, additional_python_paths=None, command=None) -> Tuple[str, str]:
+        additional_python_paths = [] if additional_python_paths is None else additional_python_paths
+        command = [] if command is None else command
         working_directory = str(working_directory)
         additional_python_paths = [str(path) for path in additional_python_paths]
 

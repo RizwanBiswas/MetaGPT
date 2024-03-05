@@ -3,7 +3,7 @@
 # @Desc   : human interaction to get required type text
 
 import json
-from typing import Any, Tuple, Type
+from typing import Optional, Any, Tuple, Type
 
 from pydantic import BaseModel
 
@@ -71,8 +71,9 @@ class HumanInteraction(object):
                 pass
 
     def interact_with_instruct_content(
-        self, instruct_content: BaseModel, mapping: dict = dict(), interact_type: str = "review"
+        self, instruct_content: BaseModel, mapping: Optional[dict] = None, interact_type: str = "review"
     ) -> dict[str, Any]:
+        mapping = {} if mapping is None else mapping
         assert interact_type in ["review", "revise"]
         assert instruct_content
         instruct_content_dict = instruct_content.model_dump()

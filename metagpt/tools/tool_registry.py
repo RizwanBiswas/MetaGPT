@@ -40,9 +40,10 @@ class ToolRegistry(BaseModel):
         tool_code="",
         tool_type="other",
         tool_source_object=None,
-        include_functions=[],
+        include_functions=None,
         verbose=False,
     ):
+        include_functions = [] if include_functions is None else include_functions
         if self.has_tool(tool_name):
             return
 

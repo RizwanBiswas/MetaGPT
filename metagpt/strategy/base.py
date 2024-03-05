@@ -3,7 +3,7 @@
 # @Author  : stellahong (stellahong@fuzhi.ai)
 # @Desc    :
 from abc import ABC
-from typing import List
+from typing import Optional, List
 
 from anytree import Node, RenderTree
 from pydantic import BaseModel
@@ -62,7 +62,7 @@ class ThoughtTree(RenderTree):
         all_nodes = [node for _, _, node in self]
         return all_nodes
 
-    def update_node(self, thought: List[dict] = [], current_node: ThoughtNode = None) -> List[ThoughtNode]:
+    def update_node(self, thought: Optional[List[dict]] = None, current_node: ThoughtNode = None) -> List[ThoughtNode]:
         """
         Update the tree with new thoughts.
 
@@ -73,6 +73,7 @@ class ThoughtTree(RenderTree):
         Returns:
             List[ThoughtNode]: A list of ThoughtNode instances representing the updated tree nodes.
         """
+        thought = [] if thought is None else thought
         nodes = []
         for node_info in thought:
             node = ThoughtNode(

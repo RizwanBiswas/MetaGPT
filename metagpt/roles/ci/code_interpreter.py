@@ -25,9 +25,10 @@ class CodeInterpreter(Role):
         self,
         auto_run=True,
         use_tools=False,
-        tools=[],
+        tools=None,
         **kwargs,
     ):
+        tools = [] if tools is None else tools
         super().__init__(auto_run=auto_run, use_tools=use_tools, tools=tools, **kwargs)
         self._set_react_mode(react_mode="plan_and_act", auto_run=auto_run, use_tools=use_tools)
         if use_tools and tools:

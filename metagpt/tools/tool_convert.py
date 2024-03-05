@@ -1,9 +1,11 @@
 import inspect
 
 from metagpt.utils.parse_docstring import GoogleDocstringParser, remove_spaces
+from typing import Optional
 
 
-def convert_code_to_tool_schema(obj, include: list[str] = []):
+def convert_code_to_tool_schema(obj, include: Optional[list[str]] = None):
+    include = [] if include is None else include
     docstring = inspect.getdoc(obj)
     assert docstring, "no docstring found for the objects, skip registering"
 

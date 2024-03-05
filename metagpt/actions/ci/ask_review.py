@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from typing import Tuple
+from typing import Optional, Tuple
 
 from metagpt.actions import Action
 from metagpt.logs import logger
@@ -26,8 +26,9 @@ class ReviewConst:
 
 class AskReview(Action):
     async def run(
-        self, context: list[Message] = [], plan: Plan = None, trigger: str = ReviewConst.TASK_REVIEW_TRIGGER
+        self, context: Optional[list[Message]] = None, plan: Plan = None, trigger: str = ReviewConst.TASK_REVIEW_TRIGGER
     ) -> Tuple[str, bool]:
+        context = [] if context is None else context
         if plan:
             logger.info("Current overall plan:")
             logger.info(
