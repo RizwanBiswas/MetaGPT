@@ -205,7 +205,7 @@ def repair_invalid_json(output: str, error: str) -> str:
             new_line = line.replace("}", "")
         elif line.endswith("},") and output.endswith("},"):
             new_line = line[:-1]
-        elif (rline[col_no] in ["'", '"']) and (line.startswith('"') or line.startswith("'")) and "," not in line:
+        elif (rline[col_no] in ["'", '"']) and line.startswith(('"', "'")) and "," not in line:
             # problem, `"""` or `'''` without `,`
             new_line = f",{line}"
         elif '",' not in line and "," not in line and '"' not in line:

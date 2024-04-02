@@ -237,7 +237,7 @@ def get_column_info(df: pd.DataFrame) -> dict:
         data_type = str(df[col].dtype).replace("dtype('", "").replace("')", "")
         if data_type.startswith("object"):
             column_info["Category"].append(col)
-        elif data_type.startswith("int") or data_type.startswith("float"):
+        elif data_type.startswith(("int", "float")):
             column_info["Numeric"].append(col)
         elif data_type.startswith("datetime"):
             column_info["Datetime"].append(col)
