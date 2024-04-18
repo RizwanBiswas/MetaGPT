@@ -77,8 +77,8 @@ class TalkAction(Action):
         language = self.language
         system_msgs = [
             f"You are {self.agent_description}.",
-            "Your responses should align with the role-play agreement, "
-            "maintaining the character's persona and habits. When faced with unrelated questions, playfully "
+            "Your responses should align with the role-play agreement, ",
+            "maintaining the character's persona and habits. When faced with unrelated questions, playfully ",
             "decline to answer without revealing your AI nature to preserve the character's image.",
             "If the information is insufficient, you can search in the context or knowledge.",
             f"Answer the following questions strictly in {language}, and the answers must follow the Markdown format.",

@@ -117,41 +117,30 @@ class TeachingPlanBlock:
 
     TOPIC_STATEMENTS = {
         COURSE_TITLE: [
-            "Statement: Find and return the title of the lesson only in markdown first-level header format, "
-            "without anything else."
+            "Statement: Find and return the title of the lesson only in markdown first-level header format, ", "without anything else."
         ],
         "Teaching Content": [
-            'Statement: "Teaching Content" must include vocabulary, analysis, and examples of various grammar '
+            'Statement: "Teaching Content" must include vocabulary, analysis, and examples of various grammar ',
             "structures that appear in the textbook, as well as the listening materials and key points.",
             'Statement: "Teaching Content" must include more examples.',
         ],
         "Teaching Time Allocation": [
-            'Statement: "Teaching Time Allocation" must include how much time is allocated to each '
-            "part of the textbook content."
+            'Statement: "Teaching Time Allocation" must include how much time is allocated to each ', "part of the textbook content."
         ],
         "Teaching Methods and Strategies": [
-            'Statement: "Teaching Methods and Strategies" must include teaching focus, difficulties, materials, '
-            "procedures, in detail."
+            'Statement: "Teaching Methods and Strategies" must include teaching focus, difficulties, materials, ', "procedures, in detail."
         ],
         "Vocabulary Cloze": [
-            'Statement: Based on the content of the textbook enclosed by "[LESSON_BEGIN]" and "[LESSON_END]", '
-            "create vocabulary cloze. The cloze should include 10 {language} questions with {teaching_language} "
-            "answers, and it should also include 10 {teaching_language} questions with {language} answers. "
-            "The key-related vocabulary and phrases in the textbook content must all be included in the exercises.",
+            'Statement: Based on the content of the textbook enclosed by "[LESSON_BEGIN]" and "[LESSON_END]", ',"create vocabulary cloze. The cloze should include 10 {language} questions with {teaching_language} ","answers, and it should also include 10 {teaching_language} questions with {language} answers. ","The key-related vocabulary and phrases in the textbook content must all be included in the exercises.",
         ],
         "Grammar Questions": [
-            'Statement: Based on the content of the textbook enclosed by "[LESSON_BEGIN]" and "[LESSON_END]", '
-            "create grammar questions. 10 questions."
+            'Statement: Based on the content of the textbook enclosed by "[LESSON_BEGIN]" and "[LESSON_END]", ', "create grammar questions. 10 questions."
         ],
         "Choice Questions": [
-            'Statement: Based on the content of the textbook enclosed by "[LESSON_BEGIN]" and "[LESSON_END]", '
-            "create choice questions. 10 questions."
+            'Statement: Based on the content of the textbook enclosed by "[LESSON_BEGIN]" and "[LESSON_END]", ', "create choice questions. 10 questions."
         ],
         "Translation Questions": [
-            'Statement: Based on the content of the textbook enclosed by "[LESSON_BEGIN]" and "[LESSON_END]", '
-            "create translation questions. The translation should include 10 {language} questions with "
-            "{teaching_language} answers, and it should also include 10 {teaching_language} questions with "
-            "{language} answers."
+            'Statement: Based on the content of the textbook enclosed by "[LESSON_BEGIN]" and "[LESSON_END]", ', "create translation questions. The translation should include 10 {language} questions with ", "{teaching_language} answers, and it should also include 10 {teaching_language} questions with ", "{language} answers."
         ],
     }
 
