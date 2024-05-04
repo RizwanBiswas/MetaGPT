@@ -126,21 +126,21 @@ class MincraftEnv(Environment, MincraftExtEnv):
                 )
                 # Check if Skill Manager's vectordb right using
                 assert self.vectordb._collection.count() == len(self.skills), (
-                    f"Skill Manager's vectordb is not synced with skills.json.\n"
+                    "Skill Manager's vectordb is not synced with skills.json.\n"
                     f"There are {self.vectordb._collection.count()} skills in vectordb but {len(self.skills)} skills in skills.json.\n"
-                    f"Did you set resume=False when initializing the manager?\n"
-                    f"You may need to manually delete the vectordb directory for running from scratch."
+                    "Did you set resume=False when initializing the manager?\n"
+                    "You may need to manually delete the vectordb directory for running from scratch."
                 )
 
                 logger.info(
                     f"INIT_CHECK: There are {self.qa_cache_questions_vectordb._collection.count()} qa_cache in vectordb and {len(self.qa_cache)} questions in qa_cache.json."
                 )
                 assert self.qa_cache_questions_vectordb._collection.count() == len(self.qa_cache), (
-                    f"Curriculum Agent's qa cache question vectordb is not synced with qa_cache.json.\n"
+                    "Curriculum Agent's qa cache question vectordb is not synced with qa_cache.json.\n"
                     f"There are {self.qa_cache_questions_vectordb._collection.count()} questions in vectordb "
                     f"but {len(self.qa_cache)} questions in qa_cache.json.\n"
-                    f"Did you set resume=False when initializing the agent?\n"
-                    f"You may need to manually delete the qa cache question vectordb directory for running from scratch.\n"
+                    "Did you set resume=False when initializing the agent?\n"
+                    "You may need to manually delete the qa cache question vectordb directory for running from scratch.\n"
                 )
 
     def register_roles(self, roles: Iterable["Minecraft"]):

@@ -80,8 +80,8 @@ class HumanInteraction(object):
         logger.info(
             f"\n{interact_type.upper()} interaction\n"
             f"Interaction data: {num_fields_map}\n"
-            f"Enter the num to interact with corresponding field or `q`/`quit`/`exit` to stop interaction.\n"
-            f"Enter the field content until it meet field required type.\n"
+            "Enter the num to interact with corresponding field or `q`/`quit`/`exit` to stop interaction.\n"
+            "Enter the field content until it meet field required type.\n"
         )
 
         interact_contents = {}

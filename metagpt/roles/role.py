@@ -274,9 +274,9 @@ class Role(SerializationMixin, ContextMixin, BaseModel):
             else:
                 if self.is_human and not isinstance(action.llm, HumanProvider):
                     logger.warning(
-                        f"is_human attribute does not take effect, "
+                        "is_human attribute does not take effect, "
                         f"as Role's {str(action)} was initialized using LLM, "
-                        f"try passing in Action classes instead of initialized instances"
+                        "try passing in Action classes instead of initialized instances"
                     )
                 i = action
             self._init_action(i)

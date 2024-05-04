@@ -19,7 +19,7 @@ class DesignReview(Action):
         prompt = (
             f"Here is the Product Requirement Document (PRD):\n\n{prd}\n\nHere is the list of APIs designed "
             f"based on this PRD:\n\n{api_design}\n\nPlease review whether this API design meets the requirements"
-            f" of the PRD, and whether it complies with good design practices."
+            " of the PRD, and whether it complies with good design practices."
         )
 
         api_review = await self._aask(prompt)

@@ -25,7 +25,7 @@ class GenAndImproveImageAction(Action):
     async def refine_prompt(self, old_prompt: str, image: Image) -> str:
         msg = (
             f"You are a creative painter, with the given generated image and old prompt: {old_prompt}, "
-            f"please refine the prompt and generate new one. Just output the new prompt."
+            "please refine the prompt and generate new one. Just output the new prompt."
         )
         b64_img = encode_image(image)
         new_prompt = await self.llm.aask(msg=msg, images=[b64_img])

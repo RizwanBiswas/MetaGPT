@@ -254,7 +254,7 @@ def run_after_exp_and_passon_next_retry(logger: "loguru.Logger") -> Callable[["R
 
             fix_str = "try to fix it, " if config.repair_llm_output else ""
             logger.warning(
-                f"parse json from content inside [CONTENT][/CONTENT] failed at retry "
+                "parse json from content inside [CONTENT][/CONTENT] failed at retry "
                 f"{retry_state.attempt_number}, {fix_str}exp: {exp_str}"
             )
 

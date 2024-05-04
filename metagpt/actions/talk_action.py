@@ -34,8 +34,8 @@ class TalkAction(Action):
         if self.agent_description:
             prompt = (
                 f"You are {self.agent_description}. Your responses should align with the role-play agreement, "
-                f"maintaining the character's persona and habits. When faced with unrelated questions, playfully "
-                f"decline to answer without revealing your AI nature to preserve the character's image.\n\n"
+                "maintaining the character's persona and habits. When faced with unrelated questions, playfully "
+                "decline to answer without revealing your AI nature to preserve the character's image.\n\n"
             )
         prompt += f"Knowledge:\n{self.knowledge}\n\n" if self.knowledge else ""
         prompt += f"{self.history_summary}\n\n"
