@@ -165,7 +165,7 @@ class OpenAILLM(BaseLLM):
             if isinstance(msg, str):
                 processed_messages.append({"role": "user", "content": msg})
             elif isinstance(msg, dict):
-                assert set(msg.keys()) == set(["role", "content"])
+                assert set(msg.keys()) == {"role", "content"}
                 processed_messages.append(msg)
             elif isinstance(msg, Message):
                 processed_messages.append(msg.to_dict())
